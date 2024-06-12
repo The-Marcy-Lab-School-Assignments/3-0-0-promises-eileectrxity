@@ -30,8 +30,18 @@ const rejectedWrapper = (str) => {
 // //logging q2 test to the console
 // rejectedWrapper('Oh no!').catch((err) => console.log(err.message)) //Oh no!
 
-const handleResolvedPromise = () => {
+//QUESTION 3: a function that simply takes in a promise, and using .then, grabs the promise's resolved value, console.logs it, and then returns it
+const handleResolvedPromise = (promise) => {
+  return promise
+    .then((resolvedVal) => { //handling the resolved value of the promise
+      console.log(resolvedVal); //logs the val to the console
+      return resolvedVal; //returns the resolved val for further chaining
+    })
 };
+
+// //logging q3 test to the console
+// handleResolvedPromise(Promise.resolve('yo')) //"yo"
+// handleResolvedPromise(Promise.resolve('yo')).then(val => console.log(`we still have ${val}`)); //"yo"   "we still have yo"
 
 const handleResolvedOrRejectedPromise = () => {
 };

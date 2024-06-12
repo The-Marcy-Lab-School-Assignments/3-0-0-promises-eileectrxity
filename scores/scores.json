@@ -27,11 +27,11 @@
   },
   "testScores": {
     "Modify Tests": {
-      "MoTe1": 0,
+      "MoTe1": 1,
       "MoTe2": 0
     },
     "From Scratch Tests": {
-      "FrScTe1": 0,
+      "FrScTe1": 1,
       "FrScTe2": 0,
       "FrScTe3": 0,
       "FrScTe4": 0,
@@ -43,8 +43,8 @@
     }
   },
   "humanReadable": {
-    "Modify Tests": "0/2",
-    "finalTestScore": "FINAL SCORE: 0/11",
-    "From Scratch Tests": "0/9"
+    "Modify Tests": "1/2",
+    "finalTestScore": "FINAL SCORE: 2/11",
+    "From Scratch Tests": "1/9"
   }
 }

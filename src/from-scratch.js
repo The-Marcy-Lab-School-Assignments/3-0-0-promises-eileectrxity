@@ -60,8 +60,29 @@ const handleResolvedOrRejectedPromise = (promise) => {
 // handleResolvedOrRejectedPromise(Promise.resolve(100)).then(val => val) //100 --> also returns 100
 // handleResolvedOrRejectedPromise(Promise.reject(Error('Yikes!'))).then(val => val === null) //"Your error message was: Yikes!" --> returns null
 
-const pauseForMs = () => {
+/*QUESTION 5: an asynchronous function that takes in a number of milliseconds and returns a promise that resolves after the given number of ms. this promise will never reject
+NOTE: when dealing with Promises that involve asynchronous operations (like setTimeout), absolutely need to handle their resolution with .then() or await and return the data/value.
+this ensures proper management of asynchronous flow and prevents errors like JestAssertionError in testing environments. */
+const pauseForMs = (ms) => {
+  return new Promise((resolve) => { //created a new promise that wraps setTimeout()
+    setTimeout(() => { //starting a timer that pauses execution for the given number of milliseconds; could also have done --> setTimeout(resolve, ms)
+      resolve(); //used as the callback function for setTimeout(). inside the resolve() function is where we would have passed the resolved value if we had one- currently resolves undefined
+    }, ms);
+  })
+  .then((data) => { //when i commented this and the next three lines out to test what would happen got an npm test error (JestAssertionError: Caught error after test environment was torn down)
+    // console.log(data); //where we would have handled the resolved value
+    return data; //currently returns undefined as no value was passed to resolve()
+  });
 };
+
+// //alt solution: however, won't pass FrScTe7 (test 7) as the promise needs to return undefined while this function logs a message. coding with the await keyword ensures that the msg to log upon resolution only executes after the delay
+// const pauseForMs = async (ms) => { //async label needs to be coded as the await keyword is being used
+//   await new Promise((resolve) => setTimeout(resolve, ms)); //await keyword causes the code to pause and wait for the Promise to resolve. it then unpacks the Promise (currently to wait a given ms) and returns the resolved value, presently undefined.
+//   // console.log("Promise fulfilled: Delay complete!"); //useful for debugging purposes but doesn't affect functionality if omitted
+// };
+
+// //logging q5 test to the console
+// pauseForMs(1000).then(() => console.log("It's been a second!")); //undefined    "It's been a second!"
 
 module.exports = {
   resolvedWrapper,

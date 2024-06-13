@@ -94,7 +94,7 @@ describe(testSuiteName, () => {
         expect(err).toBeNull();
       });
   });
-
+//edit: noting that the below FrScTe7 passes in local terminal when running npm test but is not updating as passed in scores.json for some reason 
   it('pauseForMs - returns a promise, but that promise has no value', () => {
     expect(pauseForMs(100)).resolves.toBeUndefined();
   });

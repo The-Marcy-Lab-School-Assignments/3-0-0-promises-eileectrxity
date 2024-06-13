@@ -38,13 +38,13 @@
       "FrScTe5": 1,
       "FrScTe6": 1,
       "FrScTe7": 0,
-      "FrScTe8": 0,
-      "FrScTe9": 0
+      "FrScTe8": 1,
+      "FrScTe9": 1
     }
   },
   "humanReadable": {
     "Modify Tests": "1/2",
-    "finalTestScore": "FINAL SCORE: 7/11",
-    "From Scratch Tests": "6/9"
+    "finalTestScore": "FINAL SCORE: 9/11",
+    "From Scratch Tests": "8/9"
   }
 }
